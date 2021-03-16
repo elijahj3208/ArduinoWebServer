@@ -1,10 +1,14 @@
+
 class PinModel
 {
   public :
 
-  PinModel(int pin, int level);
-  int GetPin();
-  int GetLevel();
+  PinModel();
+  int getPin();
+  int getLevel();
+
+  void setPinNum(int pin);
+  void setLevelState(int level);
 
   private :
 
@@ -12,18 +16,24 @@ class PinModel
   int _Level;
 };
 
-PinModel::PinModel(int pin, int level)
-{
-  _Pin = pin;
-  _Level = level;  
-}
+PinModel::PinModel(){}
 
-int PinModel::GetPin()
+int PinModel::getPin()
 {
   return _Pin;
 }
 
-int PinModel::GetLevel()
+int PinModel::getLevel()
 {
   return _Level;
+}
+
+void PinModel::setPinNum(int pin)
+{
+  _Pin = pin;
+}
+
+void PinModel::setLevelState(int level)
+{
+  _Level = level;
 }

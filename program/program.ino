@@ -18,12 +18,14 @@ ESP8266WebServer server (80);
 void setup() 
 {
   Serial.begin(serialBaudRate);
+  
   WiFiConnection wifi(serialBaudRate, ssid, password, deviceName, staticIP, gatewayIPAddress, subnetM);
   wifi.connectToInternet(); 
 
   startMyServer(); 
 
   pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, HIGH);
 
 }
 
